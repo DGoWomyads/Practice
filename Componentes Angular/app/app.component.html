@@ -1,0 +1,23 @@
+<div class="container">
+  <input type="text" placeholder="Texto de Prueba" class="form-control" [(ngModel)]="inputText" (input)="onInputChangue()">
+  <hr>
+  <button class="btn btn-success" [disabled]='oStateButton' (click)="onReset()">{{lblButton}}</button>
+  <hr>
+  <p *ngIf="!oStateButton else inactive" style="color:green">El botón está activo</p>
+  <ng-template #inactive>
+      <p style="color:red">El botón está inactivo</p>
+  </ng-template>
+</div>
+
+<!--
+    <div style="text-align: center;"> 
+    <h1> Mostrando el valor de title: {{title}}</h1>
+  </div>
+
+  <input type="text" placeholder="Si esta vacio, el boton esta inactivo" class="form-control" (input)="onInputUpdate($event)">
+  <input type="text" class="form-control" [(ngModel)]="inputText" (input)="noText()">
+  <p>Lo que ha escrito: {{inputText}}</p>
+  <hr>
+  <button class="btn btn-primary" [disabled]='disabled' (click)="onClickButton()">{{textButton}}
+  </button>
+-->
